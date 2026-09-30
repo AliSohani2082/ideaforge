@@ -1,0 +1,16 @@
+{
+  "name": "@ideaforge/cli",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "ideaforge": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --sourcemap && chmod +x dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}
