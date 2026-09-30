@@ -213,9 +213,32 @@ importers:
         specifier: ^19.0.2
         version: 19.3.0(@types/react@19.3.0)
 
-  packages/cli: {}
+  packages/cli:
+    dependencies:
+      '@ideaforge/collectors':
+        specifier: workspace:*
+        version: link:../collectors
+      '@ideaforge/core':
+        specifier: workspace:*
+        version: link:../core
+      '@ideaforge/harness':
+        specifier: workspace:*
+        version: link:../harness
+      '@ideaforge/scoring':
+        specifier: workspace:*
+        version: link:../scoring
+      drizzle-orm:
+        specifier: ^0.38.2
+        version: 0.38.4(@types/better-sqlite3@7.6.13)(@types/react@19.3.0)(better-sqlite3@11.10.0)(react@19.3.0)
 
-  packages/collectors: {}
+  packages/collectors:
+    dependencies:
+      '@ideaforge/core':
+        specifier: workspace:*
+        version: link:../core
+      drizzle-orm:
+        specifier: ^0.38.2
+        version: 0.38.4(@types/better-sqlite3@7.6.13)(@types/react@19.3.0)(better-sqlite3@11.10.0)(react@19.3.0)
 
   packages/core:
     dependencies:
@@ -230,7 +253,14 @@ importers:
         specifier: ^7.6.12
         version: 7.6.13
 
-  packages/harness: {}
+  packages/harness:
+    dependencies:
+      '@ideaforge/scoring':
+        specifier: workspace:*
+        version: link:../scoring
+      zod:
+        specifier: ^3.24.1
+        version: 3.25.76
 
   packages/mcp: {}
 
@@ -2019,6 +2049,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
 snapshots:
 
   '@emnapi/runtime@1.11.3':
@@ -3498,3 +3531,5 @@ snapshots:
   wrappy@1.0.2: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.25.76: {}
