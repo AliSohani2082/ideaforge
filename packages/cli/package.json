@@ -12,5 +12,12 @@
     "build": "tsup src/index.ts --format esm --dts --sourcemap && chmod +x dist/index.js",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "@ideaforge/core": "workspace:*",
+    "@ideaforge/collectors": "workspace:*",
+    "@ideaforge/harness": "workspace:*",
+    "@ideaforge/scoring": "workspace:*",
+    "drizzle-orm": "^0.38.2"
   }
 }

@@ -10,6 +10,6 @@ const pkg = JSON.parse(readFileSync(join(__dirname, "..", "package.json"), "utf-
   version: string;
 };
 
-const { output, exitCode } = runCli(process.argv.slice(2), pkg.version);
+const { output, exitCode } = await runCli(process.argv.slice(2), pkg.version);
 console.log(output);
 process.exitCode = exitCode;
