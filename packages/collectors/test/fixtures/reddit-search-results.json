@@ -1,0 +1,52 @@
+{
+  "kind": "Listing",
+  "data": {
+    "children": [
+      {
+        "kind": "t3",
+        "data": {
+          "name": "t3_abc111",
+          "title": "I wish there was a tool that chased late-paying clients for me",
+          "selftext": "I keep having to manually email clients who are late on invoices.",
+          "author": "freelancer_jane",
+          "ups": 42,
+          "num_comments": 12,
+          "created_utc": 1750000000,
+          "subreddit": "freelance",
+          "stickied": false,
+          "permalink": "/r/freelance/comments/abc111/"
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "name": "t3_abc222",
+          "title": "Weekly self-promo megathread",
+          "selftext": "Post your business here.",
+          "author": "AutoModerator",
+          "ups": 3,
+          "num_comments": 0,
+          "created_utc": 1750000000,
+          "subreddit": "freelance",
+          "stickied": true,
+          "permalink": "/r/freelance/comments/abc222/"
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "name": "t3_abc333",
+          "title": "Check out my new invoicing SaaS!",
+          "selftext": "Link: https://example.com/one https://example.com/two",
+          "author": "spammer_bot",
+          "ups": 1,
+          "num_comments": 0,
+          "created_utc": 1750000000,
+          "subreddit": "freelance",
+          "stickied": false,
+          "permalink": "/r/freelance/comments/abc333/"
+        }
+      }
+    ]
+  }
+}

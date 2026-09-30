@@ -1,0 +1,10 @@
+{
+  "kind": "Listing",
+  "data": {
+    "children": [
+      { "kind": "t5", "data": { "display_name": "freelance", "subscribers": 500000 } },
+      { "kind": "t5", "data": { "display_name": "smallbusiness", "subscribers": 1900000 } },
+      { "kind": "t5", "data": { "display_name": "tinyhobby", "subscribers": 200 } }
+    ]
+  }
+}

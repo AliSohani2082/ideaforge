@@ -12,5 +12,9 @@
     "build": "tsup src/index.ts --format esm --dts --sourcemap",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "@ideaforge/core": "workspace:*",
+    "drizzle-orm": "^0.38.2"
   }
 }
