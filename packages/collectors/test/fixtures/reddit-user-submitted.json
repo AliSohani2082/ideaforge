@@ -1,0 +1,10 @@
+{
+  "kind": "Listing",
+  "data": {
+    "children": [
+      { "kind": "t3", "data": { "subreddit": "smallbusiness" } },
+      { "kind": "t3", "data": { "subreddit": "smallbusiness" } },
+      { "kind": "t3", "data": { "subreddit": "entrepreneur" } }
+    ]
+  }
+}

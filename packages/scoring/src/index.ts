@@ -1,26 +1,13 @@
 /**
  * Scores are deterministic code, never model output — the same evidence always yields the same
- * score, and re-scoring costs zero tokens. The real formulas and weights are nora's spec; this
- * placeholder proves the shape (fixed inputs -> a pure, table-testable function) it will be
- * implemented against.
+ * score, and re-scoring cached evidence costs zero tokens. Every formula here is the literal spec
+ * from nora's `plan` document on ALIA-3 ("IdeaForge Evaluation Methodology v0").
  */
-export interface ScoreInputs {
-  readonly demandSignal: number;
-  readonly competitionSignal: number;
-}
-
-export interface ScoreResult {
-  readonly score: number;
-  readonly breakdown: Readonly<Record<string, number>>;
-}
-
-export function scorePlaceholder(inputs: ScoreInputs): ScoreResult {
-  const score = Math.round((inputs.demandSignal - inputs.competitionSignal) * 100) / 100;
-  return {
-    score,
-    breakdown: {
-      demandSignal: inputs.demandSignal,
-      competitionSignal: inputs.competitionSignal,
-    },
-  };
-}
+export * from "./types.js";
+export * from "./demand.js";
+export * from "./competition.js";
+export * from "./complexity.js";
+export * from "./margin.js";
+export * from "./readiness.js";
+export * from "./verdict.js";
+export * from "./edge.js";

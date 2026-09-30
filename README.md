@@ -40,7 +40,10 @@ every surface.
 
 ## Running it
 
-Requirements: Node 20+, pnpm (see `packageManager` in `package.json`).
+Requirements: Node 20+, pnpm (see `packageManager` in `package.json`), and either the
+[Claude Code CLI](https://docs.claude.com/en/docs/claude-code) logged into a subscription
+(default provider), or an OpenRouter API key (`OPENROUTER_API_KEY`, fallback provider via
+`IDEAFORGE_PROVIDER=openrouter`).
 
 ```bash
 pnpm install
@@ -49,19 +52,38 @@ pnpm typecheck
 pnpm lint
 pnpm test
 
-# run the CLI
-node packages/cli/dist/index.js --help
+# run the CLI (writes ./ideaforge.db and ./ideaforge-reports/<idea-id>.md in the cwd)
+node packages/cli/dist/index.js init
+node packages/cli/dist/index.js eval "A tool that chases late-paying freelance clients automatically"
+node packages/cli/dist/index.js report <idea-id>
+node packages/cli/dist/index.js db path
 ```
 
 IdeaForge stores its data in a single SQLite file (`ideaforge.db` by default) — there is no
 external infrastructure to stand up to run it locally.
 
+Optional environment variables:
+
+- `GITHUB_TOKEN` — raises the GitHub search rate limit; the collector degrades to unauthenticated
+  with a clear message if unset.
+- `IDEAFORGE_REDDIT_USER_AGENT` — a descriptive Reddit User-Agent; Reddit needs one even
+  unauthenticated.
+- `IDEAFORGE_PROVIDER` — `claude-code` (default) or `openrouter`.
+- `OPENROUTER_API_KEY`, `OPENROUTER_MODEL` — used only when `IDEAFORGE_PROVIDER=openrouter`.
+
 ## Status
 
-This repository currently contains the monorepo scaffold and CI only: domain model wiring,
-tooling, and placeholder packages for collectors, the harness, scoring, the CLI, the MCP server,
-and the dashboard. Collectors, scoring formulas, and the harness's step executor are implemented
-in follow-up work.
+**v0 implemented** (see `ALIA-4`): the full `ideaforge eval "<idea>"` pipeline — domain model,
+Reddit + GitHub collectors, the resumable/content-addressed harness, all five deterministic scores
+plus the verdict rollup, and the CLI commands (`init`, `idea add`, `eval`, `report`, `db path`).
+Re-running `eval` on the same idea statement makes zero LLM calls (content-addressed step cache)
+and zero HTTP calls (evidence cache).
+
+Deliberately out of scope for v0: Product Hunt and Hacker News collectors, the MCP server, the
+Next.js dashboard, and the Paperclip plugin — the seams for all four exist (`packages/core`'s
+schema, `packages/collectors`' collector interfaces) but nothing beyond that is built yet. Margin
+scoring currently has no pricing-page collector, so it typically reports its neutral no-data
+default until one is added.
 
 ## License
 

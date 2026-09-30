@@ -1,0 +1,35 @@
+{
+  "total_count": 3,
+  "items": [
+    {
+      "full_name": "invoiceninja/invoiceninja",
+      "description": "Invoicing and billing platform",
+      "html_url": "https://github.com/invoiceninja/invoiceninja",
+      "stargazers_count": 10154,
+      "pushed_at": "2026-09-29T00:00:00Z",
+      "topics": ["invoicing", "billing"],
+      "license": { "spdx_id": "AAL" },
+      "fork": false
+    },
+    {
+      "full_name": "someuser/invoiceninja-fork",
+      "description": "Invoicing and billing platform",
+      "html_url": "https://github.com/someuser/invoiceninja-fork",
+      "stargazers_count": 3,
+      "pushed_at": "2025-01-01T00:00:00Z",
+      "topics": ["invoicing"],
+      "license": null,
+      "fork": true
+    },
+    {
+      "full_name": "ddyy/minvoice",
+      "description": "Minimal invoice reminder tool",
+      "html_url": "https://github.com/ddyy/minvoice",
+      "stargazers_count": 37,
+      "pushed_at": "2026-07-20T00:00:00Z",
+      "topics": ["invoicing", "reminders"],
+      "license": null,
+      "fork": false
+    }
+  ]
+}
